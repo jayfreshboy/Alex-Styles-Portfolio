@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Styles — Portfolio</title>
+  <link rel="stylesheet" href="ui_ux_project.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">Alex Styles</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about" title="Learn more about Alex">About</a>
+        <a href="#portfolio" title="See Alex’s work">Portfolio</a>
+        <a href="#contact" title="Get in touch with Alex">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="panel about-panel">
+      <div class="container">
+        <h1 class="page-title">About Me</h1>
+        <p class="lead">
+          Hello, I’m Alex Styles — a product designer and front-end developer focused on accessible, user-friendly and high-performance web experiences.
+        </p>
+        <ul class="skills">
+          <li>UI Design</li>
+          <li>HTML / CSS / JS</li>
+          <li>Accessibility</li>
+          <li>Performance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="portfolio" class="panel portfolio-panel">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-intro">Selected projects. Click any thumbnail for details.</p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <figure class="thumb">
+              <img src="placeholder-1.jpg" alt="Project One thumbnail" loading="lazy" />
+              <figcaption class="thumb-caption">
+                <h3>Project One</h3>
+                <p>Brief one-line description</p>
+              </figcaption>
+            </figure>
+            <button class="btn-primary open-modal" data-project="project-1">View Details</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel contact-panel">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-intro">Interested in working together? Send a message.</p>
+
+        <form class="contact-form" action="/send" method="post" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Alex Styles. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="project-modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title">Project Title</h2>
+      <p id="modal-description">Detailed description of the project goes here.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.open-modal').forEach(button => {
+      button.addEventListener('click', () => {
+        document.getElementById('project-modal').setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.querySelector('.close-modal').addEventListener('click', () => {
+      document.getElementById('project-modal').setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  </script>
+</body>
+</html>
