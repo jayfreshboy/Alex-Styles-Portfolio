@@ -21,4 +21,4 @@ Microsoft Copilot assisted in:
 
 ## Live Demo
 
-[View on GitHub Pages](https://your-username.github.io/alex-styles-portfolio/)
+[View on GitHub Pages](https://github.com/jayfreshboy/Alex-Styles-Portfolio)
